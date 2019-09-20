@@ -17,7 +17,7 @@ function publicar(res) {
   Visitor2.find(function (err, lista) {
     if (err) return console.error(err);
     console.log(lista);
-    let result = "<table><thaed><tr><th>ID</th><th>Name</th><th>Visits</th></tr></thaed>"
+    let result = "<table><thaed><tr><th>Id</th><th>Name</th><th>Visits</th></tr></thaed>"
     lista.forEach(lista => {
       result += "<tr><td>" + lista._id + "</td><td>" + lista.name + "</td><td>" + lista.count + "</td></tr>";
     })
@@ -30,7 +30,6 @@ app.get('/', (req, res) => {
 
   if (!req.query.name) {
     Visitor2.create({ name: "Anónimo" }, function (err) {
-      //res.send("<h1>El visitante fue almacenado con éxito</h1>");
       if (err) return console.error(err);
       publicar(res);
     });
@@ -40,7 +39,7 @@ app.get('/', (req, res) => {
       console.log(visitor2);
       if (!visitor2) {
         Visitor2.create({ name: req.query.name }, function (err) {
-          publicar(res);
+        publicar(res);
         });
 
       } else {
