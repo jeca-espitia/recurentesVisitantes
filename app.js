@@ -17,11 +17,11 @@ function publicar(res) {
   Visitor2.find(function (err, lista) {
     if (err) return console.error(err);
     console.log(lista);
-    let result = "<table><thaed><tr><th>ID</th><th>Name</th><th>Visits</th></tr></thaed><tbody>"
+    let result = "<table><thaed><tr><th>ID</th><th>Name</th><th>Visits</th></tr></thaed>"
     lista.forEach(lista => {
       result += "<tr><td>" + lista._id + "</td><td>" + lista.name + "</td><td>" + lista.count + "</td></tr>";
     })
-    result += '</tbody></table>';
+    result += '</table>';
     res.send(result);
   });
 }
