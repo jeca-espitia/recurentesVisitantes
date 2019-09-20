@@ -17,7 +17,7 @@ function publicar(res) {
   Visitor2.find(function (err, lista) {
     if (err) return console.error(err);
     console.log(lista);
-    let result = "<table><thaed><th>Id</th><th>Name</th><th>Visits</th></thaed>"
+    let result = "<table><thead><th>Id</th><th>Name</th><th>Visits</th></thead>"
     lista.forEach(lista => {
       result += "<tr><td>" + lista._id + "</td><td>" + lista.name + "</td><td>" + lista.count + "</td></tr>";
     })
